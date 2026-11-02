@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* Tokens de docs/DESIGN.md (Steep de Refero Styles, adaptado). No editar acá sin cambiar antes el
+   DESIGN.md. Contraste AA de los pares: node scripts/contraste.mjs */
+@theme {
+  --color-*: initial;
+  --color-papel: oklch(0.99 0.003 100);
+  --color-niebla: oklch(0.965 0.004 120);
+  --color-borde: oklch(0.9 0.006 120);
+  --color-tinta: oklch(0.22 0.015 160);
+  --color-tinta-suave: oklch(0.48 0.012 160);
+  --color-etiqueta: oklch(0.55 0.01 160);
+  --color-pampa: oklch(0.45 0.1 245);
+  --color-yerba-suave: oklch(0.92 0.07 125);
+  --color-monte: oklch(0.36 0.07 140);
+  --color-alerta: oklch(0.5 0.17 28);
+  --color-ok: oklch(0.45 0.1 150);
+  --color-foco: oklch(0.45 0.1 245);
+
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-sans: var(--font-geist), ui-sans-serif, sans-serif;
+  --font-mono: ui-monospace, Consolas, monospace;
+
+  --radius-tarjeta: 24px;
+  --radius-flotante: 20px;
+  --radius-chico: 16px;
+  --radius-imagen: 12px;
+
+  --shadow-flotante: 0 0 0 1px oklch(0.22 0.015 160 / 0.05), 0 20px 25px -5px oklch(0.22 0.015 160 / 0.1),
+    0 8px 10px -6px oklch(0.22 0.015 160 / 0.1);
+
+  --ease-entra: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html {
+  background: var(--color-papel);
+  color: var(--color-tinta);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+@layer components {
+  /* Títulos: la serif siempre en 400, con tracking negativo (DESIGN.md §4). */
+  .titulo-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  .titulo {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+  }
+
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-tinta);
+    font-size: 1rem;
+  }
+  .boton-relleno {
+    background: var(--color-tinta);
+    color: var(--color-papel);
+  }
+  .boton-relleno:hover {
+    background: var(--color-pampa);
+    border-color: var(--color-pampa);
+  }
+  .boton-contorno:hover {
+    background: var(--color-niebla);
+  }
+
+  .link-flecha {
+    color: var(--color-pampa);
+  }
+  .link-flecha:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Las piezas flotantes del hero: las únicas con sombra (DESIGN.md §6). */
+  .flotante {
+    background: var(--color-papel);
+    border-radius: var(--radius-flotante);
+    box-shadow: var(--shadow-flotante);
+  }
+
+  /* Entrada única de las piezas y revelado del hilo (solo transform y opacity). */
+  .entra {
+    animation: entrar 500ms var(--ease-entra) both;
+    animation-delay: calc(var(--i, 0) * 120ms + 150ms);
+  }
+  .hilo {
+    transform-origin: left center;
+    animation: revelar 900ms var(--ease-entra) 700ms both;
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revelar {
+  from {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entra,
+  .hilo {
+    animation: none;
+  }
+}

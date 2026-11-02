@@ -1,0 +1,38 @@
+{
+  "name": "schbs-ops",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Case study: the automated operation of a real online store (schbscorp.com) with n8n, Discord and AI.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3209",
+    "build": "next build",
+    "start": "next start -p 3209",
+    "lint": "eslint",
+    "test:e2e": "playwright test",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "contraste": "node scripts/contraste.mjs",
+    "capturas": "playwright test --config playwright.capturas.config.ts"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
+    "lighthouse": "^12.8.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "secretlint": "^9.3.4",
+    "@secretlint/secretlint-rule-preset-recommend": "^9.3.4"
+  }
+}

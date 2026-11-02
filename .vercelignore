@@ -1,0 +1,13 @@
+.env*
+!.env.example
+/notas/
+/CLAUDE.md
+/docs/
+/scripts/
+/tests/
+/test-results/
+/playwright-report/
+/.next/
+/node_modules/
+/playwright.config.ts
+/playwright.capturas.config.ts

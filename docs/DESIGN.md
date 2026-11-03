@@ -157,8 +157,8 @@ piezas que entran una vez y el hilo que se revela · tarjetas de 24 px sin borde
 
 | Proyecto | Display | Tono | Layout | Movimiento | Forma | Difiere |
 |---|---|---|---|---|---|---|
-| Red Inmobiliaria (Montserrat, 25°) | ✓ | ✓ 140° | ✓ | ✗ aparición de bloques | ✓ | 4/5 |
-| Rey Automotor (Montserrat, 275°) | ✓ | ✓ 30° | ✓ | ✗ aparición de bloques | ✓ | 4/5 |
+| Propuesta inmobiliaria (Montserrat, 25°) | ✓ | ✓ 140° | ✓ | ✗ aparición de bloques | ✓ | 4/5 |
+| Propuesta concesionaria (Montserrat, 275°) | ✓ | ✓ 30° | ✓ | ✗ aparición de bloques | ✓ | 4/5 |
 | TurnoListo (Lexend, 188°) | ✓ | ✓ 57° | ✓ | ✓ | ✗ radios grandes | 4/5 |
 | Embudo (Space Grotesk, 150°) | ✓ | ✓ 95° | ✓ | ✓ | ✓ | 5/5 |
 | Fojas (Newsreader, 235°) | ✓ | ✗ 10° | ✓ | ✓ | ✓ | 4/5 |
